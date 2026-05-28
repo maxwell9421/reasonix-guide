@@ -1,0 +1,7 @@
+# Reasonix Code 用户指南 — GitHub Pages 配置
+# 使用 Jekyll 主题渲染 Markdown 文档
+
+title: Reasonix Code 用户指南
+description: 精确、严谨、可审计的 AI 编程助手使用指南
+theme: jekyll-theme-cayman
+show_downloads: false
