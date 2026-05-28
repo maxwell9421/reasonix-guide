@@ -4,22 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reasonix Code 用户指南</title>
-  <meta http-equiv="refresh" content="0; url=docs/README.md">
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      max-width: 800px;
-      margin: 100px auto;
-      padding: 20px;
-      text-align: center;
-      color: #333;
-    }
-    a { color: #0366d6; }
-  </style>
+  <meta name="description" content="Reasonix Code — 精确、严谨、可审计的 AI 编程助手使用指南">
+  <!-- docsify -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-copy-code@latest/dist/docsify-copy-code.min.css">
 </head>
 <body>
-  <h1>Reasonix Code 用户指南</h1>
-  <p>正在跳转到文档…</p>
-  <p>如果未自动跳转，<a href="docs/README.md">点击这里</a>。</p>
+  <div id="app">正在加载文档…</div>
+  <script>
+    window.$docsify = {
+      name: 'Reasonix Code',
+      repo: 'maxwell9421/reasonix-guide',
+      loadSidebar: false,
+      auto2top: true,
+      coverpage: false,
+      basePath: 'docs/',
+      search: 'auto',
+      plugins: [
+        function(hook, vm) {
+          hook.beforeEach(function(content) {
+            return content
+              .replace(/```reasonix/g, '```')
+              .replace(/\[exit \d+\]/g, '')
+          })
+        }
+      ]
+    }
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@latest/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-search@latest/dist/docsify-search.min.js"></script>
 </body>
 </html>
